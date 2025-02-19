@@ -1,29 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <remote name="gitea"
+          fetch="https://gitea.com"
+          revision="refs/heads/lineage-22.0" />
 
-<!-- Apps -->
-<project path="packages/apps/GrapheneCam" name="MI439-CLO/android_packages_apps_GrapheneCam" remote="github" revision="topaz" clone-depth="1" />
+  <remote name="gitlab"
+          fetch="https://gitlab.com"
+          revision="refs/heads/13.x" />
 
-<!-- Kernel -->
-<project path="kernel/xiaomi/sdm439" name="Jprimero15/android_kernel_xiaomi_sdm439-4.19" remote="github" clone-depth="1" revision="udc" />
+  <!-- AOSP -->
+  <remove-project name="LineageOS/android_external_robolectric" />
+  <project path="external/robolectric" name="Atiga-Stuff/external_robolectric" groups="pdk-cw-fs,pdk-fs,sysui-studio" revision="lineage-22.0-plus" />
+  <remove-project name="LineageOS/android_frameworks_libs_systemui" />
+  <project path="frameworks/libs/systemui" name="Atiga-Stuff/frameworks_libs_systemui" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="private" revision="lineage-22.0-plus" />
+  <remove-project name="LineageOS/android_packages_apps_Settings" />
+  <project path="packages/apps/Settings" name="Atiga-Stuff/packages_apps_Settings" groups="pdk-fs" remote="private" revision="lineage-22.0-plus" />
 
-<!-- HALs -->
-<project path="hardware/mithorium-4.19" name="MI439-CLO/android_hardware_mithorium-4.19" remote="github" clone-depth="1" revision="udc-k4.19" />
+  <!-- LineageOS -->
+  <remove-project name="LineageOS/android_lineage-sdk" />
+  <project path="lineage-sdk" name="Atiga-Stuff/lineage-sdk" remote="private" revision="lineage-22.0-plus" />
+  <remove-project name="LineageOS/android_packages_apps_Trebuchet" />
+  <project path="packages/apps/AtigaLauncher" name="Atiga-Stuff/packages_apps_AtigaLauncher" remote="private" revision="atiga-1.0" />
+  <remove-project name="LineageOS/android_packages_apps_Updater" />
+  <project path="packages/apps/Updater" name="Atiga-Stuff/packages_apps_Updater" remote="private" revision="lineage-22.0-plus" />
+  <remove-project name="LineageOS/android_vendor_lineage" />
+  <project path="vendor/lineage" name="Atiga-Stuff/vendor_lineage" revision="lineage-22.0-plus" />
 
-<!-- GPS -->
-<project path="hardware/qcom-caf/gps-legacy" name="MI439-CLO/android_hardware_qcom_gps" remote="github" revision="uvite-legacy-component" />
-   
-<!-- Device -->
-<project path="device/xiaomi/mi439" name="Gtajisan/device_xiaomi_mi439" remote="github" revision="udc-2-evo" />
+  <!-- Atiga Trees -->
+  <project path="device/xiaomi/rosy" name="Porter-union-rom-updates/device_xiaomi_rosy" remote="private" revision="15" />
+  <project path="kernel/xiaomi/rosy" name="Porter-union-rom-updates/kernel_xiaomi_rosy" remote="private" revision="15" />
+  <project path="vendor/xiaomi/rosy" name="Porter-union-rom-updates/vendor_xiaomi_rosy" remote="private" revision="15" />
 
-<project path="device/qcom/common" name="MI439-CLO/device_qcom_common" remote="github" revision="udc-2" />
-
-<!--- Vendor Blobs -->
-<project path="vendor/xiaomi/mi439" name="LOLZKERNEL/proprietary_vendor_xiaomi_mi439-4.19" remote="github" clone-depth="1" revision="udc" />
-
-<project path="vendor/qcom/common" name="ThankYouMario/proprietary_vendor_qcom_common" remote="github" clone-depth="1" revision="uvite" />
-
-<!-- Vendor Opensource -->
-<project path="vendor/qcom/opensource/core-utils" name="MI439-CLO/android_vendor_qcom-opensource_core-utils" remote="github" revision="uvite" />
-
+  <!-- Atiga Stuff -->
+  <project path="device/atiga/ota" name="aepranata/device_atiga_ota" revision="lineage-22.0" />
+  <project path="packages/apps/AtigaArtsStub" name="Atiga-Stuff/packages_apps_AtigaArtsStub" revision="atiga-1.0" clone-depth="1" />
+  <project path="prebuilts/clang/host/linux-x86/clang-atiga" name="aepranata/atiga-clang" remote="gitlab" clone-depth="1" />
+  <project path="vendor/atiga/fx" name="Atiga-Stuff/vendor_atiga_fx" revision="atiga-2.0" />
+  <project path="vendor/lineage-priv" name="aepranata/vendor_atiga-priv" remote="gitea" />
 </manifest>
