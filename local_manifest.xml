@@ -27,7 +27,7 @@
   <project path="vendor/lineage" name="Atiga-Stuff/vendor_lineage" revision="lineage-22.0-plus" />
 
   <!-- Atiga Trees -->
-  <project path="device/xiaomi/rosy" name="Porter-union-rom-updates/device_xiaomi_rosy" remote="private" revision="15" />
+  <project path="device/xiaomi/rosy" name="Porter-union-rom-updates/device_xiaomi_rosy" remote="private" revision="Evo/15" />
   <project path="kernel/xiaomi/rosy" name="Porter-union-rom-updates/kernel_xiaomi_rosy" remote="private" revision="15" />
   <project path="vendor/xiaomi/rosy" name="Porter-union-rom-updates/vendor_xiaomi_rosy" remote="private" revision="15" />
 
